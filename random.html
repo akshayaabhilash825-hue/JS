@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="document.getElementById('num1').innerHTML = getRandNum(6)">Click Me</button>
+
+<p id="num1"></p>
+
+
+<script>
+
+  function getRandNum(max) {
+  return Math.floor(Math.random() * Math.floor(6)+1);
+  }
+  console.log(getRandNum(6));
+
+
+
+
+
+
+</script>
+</body>
+</html>

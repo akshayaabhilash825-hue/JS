@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Type Conversions</h2>
+
+<script>
+
+var output;
+
+output = String('500');
+console.log(typeof output);
+
+output = String(3 + 7);
+console.log(output); 
+
+// Other data types to string
+
+output = String('null');
+console.log(output); 
+
+output = String(undefined);
+console.log(output); 
+
+output = String(NaN);
+console.log(output); 
+
+output = String(true);
+console.log(output);
+
+output = String(false);
+console.log(output); 
+
+// using toString()
+
+output = (500).toString();
+console.log(output); 
+
+output = true.toString();
+console.log(output);
+
+</script>
+
+</body>
+</html>

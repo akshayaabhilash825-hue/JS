@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+ let mysteryLevel = Math.floor(Math.random() * 50) + 1;
+
+
+let userScoreStr = "45"; 
+let userScore = Number(userScoreStr); 
+
+let difference = Math.abs(mysteryLevel - userScore);
+console.log("Mystery Level:", mysteryLevel);
+console.log("User Score:", userScore);
+console.log("Absolute Difference:", difference);
+
+
+let sqrtScore = Math.sqrt(userScore);
+console.log("Square Root of User Score:", sqrtScore);
+
+
+console.log("Value of Pi:", Math.PI);
+
+
+let result = "20" * 5;
+console.log("Implicit Conversion Result:", result);
+
+
+let highest = Math.max(10, 20, mysteryLevel);
+let lowest = Math.min(10, 20, mysteryLevel);
+console.log("Highest Value:", highest);
+console.log("Lowest Value:", lowest);
+</script>
+</body>
+</html>
