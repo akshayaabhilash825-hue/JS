@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <input type="text" id="input" >
+    <button onclick="show()"> Submit</button>
+    <p id="num"></p>
+
+    <script>
+    function show(){
+{
+            let first=document.getElementById("input").value;
+            let mark=Number(first);
+           var grade= (mark<=40)?"fail":"Pass"
+
+            document.getElementById("num").innerHTML=grade;
+        }
+
+    }
+    
+
+   </script> 
+</body>
+</html>

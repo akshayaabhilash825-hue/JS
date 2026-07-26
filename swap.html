@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Swap Tea and Coffee</title>
+</head>
+<body>
+  <button id="swapBtn">Swap Drinks</button>
+  <p id="result"></p>
+
+  <script>
+
+    let tea = "Tea";
+    let coffee = "Coffee";
+
+    document.getElementById("swapBtn").addEventListener("click", function() {
+    
+      let temp = tea;
+      tea = coffee;
+      document.getElementById("result").textContent = "Tea: " + tea + " | Coffee: " + coffee;
+    });
+  </script>
+</body>
+</html>
