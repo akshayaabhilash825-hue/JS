@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Reminder Tool</title>
+</head>
+<body>
+  <h2>Event Reminder Tool</h2>
+  <label for="dateInput">Enter a past date (YYYY-MM-DD): </label>
+  <input type="date" id="dateInput">
+  <button onclick="showDetails()">Check</button>
+
+  <p id="result"></p>
+
+  <script>
+    function showDetails() {
+      let inputDate = document.getElementById("dateInput").value;
+      if (!inputDate) {
+        document.getElementById("result").textContent = "Please enter a date.";
+        return;
+      }
+
+      let dateObj = new Date(inputDate);
+
+      // Extract year, month name, and day
+      let year = dateObj.getFullYear();
+      let monthName = dateObj.toLocaleString("default", { month: "long" });
+      let day = dateObj.getDate();
+
+      // Calculate full years passed
+      let today = new Date();
+      let yearsPassed = today.getFullYear() - year;
+
+      // Adjust if the anniversary hasn’t occurred yet this year
+      let hasAnniversaryPassed =
+        today.getMonth() > dateObj.getMonth() ||
+        (today.getMonth() === dateObj.getMonth() && today.getDate() >= day);
+
+      if (!hasAnniversaryPassed) {
+        yearsPassed--;
+      }
+
+      // Custom message
+      let message =
+        yearsPassed >= 1
+          ? "It has been more than a year since that date."
+          : "It has been less than a year since that date.";
+
+      document.getElementById("result").textContent =
+        `The date was ${day} ${monthName}, ${year}. ` +
+        `${yearsPassed} full year(s) have passed. ` +
+        message;
+    }
+  </script>
+</body>
+</html>

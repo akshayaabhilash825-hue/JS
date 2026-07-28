@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Birthday Tracker</title>
+</head>
+<body>
+  <button id="showDetails">Show Birthday Details</button>
+  <p id="result"></p>
+
+  <script>
+    
+    let friend = {
+      name: "Aadith",
+      birthDate: "2003-09-25"
+    };
+
+    function getBirthdayDetails(friend) {
+      let birthDateObj = new Date(friend.birthDate);
+
+    
+      let year = birthDateObj.getFullYear();
+      let monthName = birthDateObj.toLocaleString("default", { month: "long" });
+      let day = birthDateObj.getDate();
+
+  
+      let today = new Date();
+      let age = today.getFullYear() - year;
+
+      
+      let hasBirthdayPassed =
+        today.getMonth() > birthDateObj.getMonth() ||
+        (today.getMonth() === birthDateObj.getMonth() && today.getDate() >= day);
+
+      if (!hasBirthdayPassed) {
+        age--;
+      }
+
+      return `${friend.name} was born on ${day} ${monthName}, ${year} and is ${age} years old.`;
+    }
+
+    
+    document.getElementById("showDetails").addEventListener("click", function() {
+      document.getElementById("result").textContent = getBirthdayDetails(friend);
+    });
+  </script>
+</body>
+</html>
