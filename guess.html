@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        let chances = 0;
+
+while (chances < 5) {
+  let guess = parseInt(prompt("Enter a number between 1 and 5:"));
+
+  if (isNaN(guess) || guess < 1 || guess > 5) {
+    console.log("Invalid input");
+    continue; 
+  }
+
+  chances++;
+
+  if (guess === 3) {
+    console.log("You guessed it right!");
+    break; 
+  } else {
+    console.log("Wrong guess. Try again.");
+  }
+}
+
+if (chances === 5) {
+  console.log("Game over");
+}
+
+    </script>
+</body>
+</html>
