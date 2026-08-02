@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Checker</title>
+</head>
+<body>
+
+<script>
+    
+    let jsonText = `{
+        "name": "John",
+        "email": "john@example.com",
+        "feedback": "Thank you for the excellent service!"
+    }`;
+
+    try {
+        
+        let user = JSON.parse(jsonText);
+
+       
+        const checkFeedback = (data) => {
+            if (/thank/i.test(data.feedback)) {
+                console.log("Positive feedback received");
+            } else {
+                console.log("Feedback noted");
+            }
+        };
+
+        
+        checkFeedback(user);
+
+    } catch (error) {
+        console.log("Error: Invalid JSON - " + error.message);
+    }
+</script>
+
+</body>
+</html>
