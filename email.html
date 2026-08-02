@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="output" oninput="show()">
+    
+      <p id="box"></p>
+    
+    <script>
+        function show()
+        {
+            a=document.getElementById("output").value;
+            password=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(a);
+            console.log(password)
+            if(password==true)
+        {
+            document.getElementById("box").innerHTML='valid'
+            document.getElementById("box").style.color="Green";
+        }
+        else{
+            document.getElementById("box").innerHTML=' not valid'
+            document.getElementById("box").style.color="Red";
+        }
+        }
+        
+    </script>
+    
+</body>
+</html>
